@@ -1,0 +1,35 @@
+.singerbox {
+    padding:10px 10px;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 15px;
+      list-style: none;
+
+      li {
+        width: 21%;
+        margin-bottom: 10px;
+
+        .singer-box {
+          display: block;
+          color: #000;
+          text-align: center;
+          font-size: 12px;
+
+          img {
+            width: 100%;
+            border-radius: 50%;
+          }
+          div {
+            margin-top: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #333;
+          }
+
+        }
+      }
+    }
+}

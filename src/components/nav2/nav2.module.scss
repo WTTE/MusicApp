@@ -1,0 +1,35 @@
+.am-navbar {
+  background: rgb(203, 63, 46) !important;
+  position: fixed;
+  top: 0px;
+  height: 50px;
+  z-index: 100;
+  width: 100%;
+  .iconfont666{
+    font-size: 20px;
+  }
+  .am-navbar-left {
+    div {
+      font-size: 14px;
+
+      a {
+        color: white;
+      }
+
+      svg {
+        vertical-align: middle;
+        margin-top: -5px;
+      }
+    }
+  }
+
+  .am-navbar-title {
+    span{
+      width: 200px;
+      height: 100%;
+      display: inline-block;
+      background-color: yellow;
+      overflow: hidden;
+    }
+  }
+}

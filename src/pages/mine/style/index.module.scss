@@ -1,0 +1,98 @@
+.container {
+  padding: 20px 8px 30px;
+  .user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+
+    .img {
+      width: 53px;
+      height: 53px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-left: 13px;
+      background-color: white;
+      img {
+        width: 45px;
+        height: 45px;
+        display: block;
+        margin: 4px 4px;
+        border-radius: 50%;
+      }
+    }
+    .name {
+      width: 100px;
+      // background-color: yellow;
+      span {
+        display: inline-block;
+        // background-color: yellow;
+        font-size: 19px;
+        font-weight: 600;
+        margin-left: 10px;
+        margin-bottom: 3px;
+      }
+      p {
+        display: inline-block;
+      }
+      .vip {
+        padding: 0 6px;
+        border-radius: 25px;
+        background-color: rgb(203, 63, 46);
+        color: #fff;
+        font-size: 8px;
+        font-weight: 700;
+        margin-left: 8px;
+        margin-right: 6px;
+        // box-shadow: 0 2px 2px #c8c8c8;
+      }
+      .vipLevel {
+        padding: 0 6px;
+        border-radius: 25px;
+        background-color: #fff;
+        color: #000;
+        font-size: 8px;
+        font-weight: 700;
+        box-shadow: 0 2px 2px #c8c8c8;
+      }
+    }
+    .Icon {
+      margin-left: 150px;
+      margin-top: 10px;
+    }
+  }
+
+  .section {
+    margin: 10px;
+    margin-bottom: 20px;
+    background: #fff;
+    color: #333;
+    box-shadow: 0 2px 2px #c8c8c8;
+    border-radius: 12px;
+    // padding: 5px 10px;
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 55px;
+      padding-left: 20px;
+      padding-right: 20px;
+      .iconfont666 {
+        font-size: 30px;
+      }
+      .title {
+        flex-grow: 1;
+        font-size: 15px;
+        font-weight: 500;
+        margin-left: 20px;
+        color: #000;
+        opacity: 0.8;
+      }
+      .number {
+        font-size: 14px;
+        color: #888;
+        margin-right: 15px;
+      }
+    }
+  }
+}

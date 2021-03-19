@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* 全局样式中将页面主体内容挤一挤，防止Nav和Tabs组件对内容进行遮挡 */
+#root {
+  padding-top: 50px;
+  padding-bottom: 70px;
+  overflow: hidden;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}

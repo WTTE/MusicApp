@@ -1,0 +1,48 @@
+.box {
+    background-color: white;
+    border-radius: 18px;
+    margin-top: 10px;
+    padding: 10px 10px 0px;
+    .content {
+        font-size: 15px;
+        font-weight: 600;
+        color: rgb(203, 63, 46);
+        // background-color: red;
+        .icon {
+            float: left;
+            color: rgb(203, 63, 46);
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        li {
+            position: relative;
+            width: 31%;
+            margin-bottom: 7px;
+            list-style: none;
+            .Linkbox {
+                display: block;
+                color: #000;
+                font-size: 12px;
+
+                img {
+                    width: 100%;
+                    border-radius: 12px;
+                }
+                div {
+                    height: 28px;
+                    margin-top: 5px;
+                    line-height: 1.2;
+                    overflow: hidden;
+                    color: #666;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

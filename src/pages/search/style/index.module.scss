@@ -1,0 +1,80 @@
+.container {
+  min-height: 100%;
+  background-color: #fff;
+  color: #333;
+  //修改searchbar的取消样式
+  .search{
+    :global(.am-search-cancel){
+      color: rgb(203, 63, 46);
+    }
+  }
+  
+
+  .hot-list-box {
+    padding: 15px 12px;
+
+    ul {
+      margin: 10px 0;
+
+      li {
+        display: inline-block;
+        height: 32px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        padding: 0 14px;
+        font-size: 14px;
+        line-height: 32px;
+        border: 1px solid #d3d4da;
+        border-radius: 32px;
+        background: #fbfcfd;
+      }
+    }
+
+    ol {
+      li {
+        display: flex;
+        align-items: center;
+        height: 45px;
+        padding:0 7px;
+        div:first-child {
+          margin-right: 10px;
+          font-size: 15px;
+          color: #666;
+        }
+        div:nth-child(2) {
+          flex-grow: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        div:last-child {
+          margin: 0 10px;
+          font-size: 15px;
+          color: #666;
+        }
+      }
+    }
+  }
+
+  .suggest-box {
+    li {
+      display: flex;
+      align-items: center;
+      height: 45px;
+      div:first-child {
+        margin: 0 10px;
+        color: #666;
+      }
+      div:last-child {
+        flex-grow: 1;
+        padding-right: 10px;
+        height: 45px;
+        line-height: 45px;
+        border-bottom: 1px solid #d3d4da;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}

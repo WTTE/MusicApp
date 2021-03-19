@@ -1,0 +1,77 @@
+.comment {
+    .hotcommentList {
+        width: 100%;
+        height: 40px;
+        font-size: 18px;
+        padding: 10px 15px;
+        background-color: #fff;
+        // margin-bottom: 5px;
+    }
+    .commentList {
+        width: 100%;
+        height: 40px;
+        font-size: 18px;
+        padding: 10px 15px;
+        background-color: #fff;
+        //margin-bottom: 5px;
+    }
+    .commentItem {
+        padding-bottom: 20px;
+        li {
+            display: flex;
+            color: #666;
+            background-color: white;
+            padding-top: 10px;
+            padding-left: 10px;
+            // margin-bottom: 5px;
+            list-style: none;
+            .left {
+                margin-right: 10px;
+                float: left;
+
+                img {
+                    display: block;
+                    height: 40px;
+                    width: 40px;
+                    object-fit: cover; //img保持原有尺寸比例,但部分内容可能被剪切
+                    border-radius: 50%;
+                }
+                .playCount {
+                    position: absolute;
+                    right: 5px;
+                    top: 5px;
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: 600;
+                }
+            }
+            .right {
+                .title {
+                    font-size: 15px;
+                    margin-bottom: 5px;
+                    color: #333;
+                    //专辑名超出部分隐藏
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                .date {
+                    font-size: 8px;
+                    overflow: hidden;
+                }
+                .iconfont666 {
+                    position: absolute;
+                    right: 20px;
+                    margin-top: -30px;
+                }
+                .content {
+                    width: 315px;
+                    text-align: left;
+                    font-size: 12px;
+                    margin-bottom: 10px;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+}

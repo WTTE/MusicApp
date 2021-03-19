@@ -1,0 +1,23 @@
+.tagsList {
+  height: 75px;
+  margin:0 9px 0 9px;
+  background-color: #f5f5f9;
+}
+
+.tagsItem {
+  width: 25%;
+  height: 75px;
+  background-color: #f5f5f9;
+  display: inline-block;
+  /* border: 1px solid black; */
+  text-align: center;
+  padding-top: 20px;
+}
+.tagsItem div{
+  font-size:smaller;
+  color: #858585;
+}
+.tagsItem img {
+  width: 31%;
+  height: auto;
+}

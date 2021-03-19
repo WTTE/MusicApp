@@ -1,0 +1,17 @@
+/* 这里存放的是外部引入的字体图标库 */
+@font-face {
+  font-family: 'iconfont666';  /* project id 2373216 */
+  src: url('//at.alicdn.com/t/font_2373216_eqy0d1jkzyp.eot');
+  src: url('//at.alicdn.com/t/font_2373216_eqy0d1jkzyp.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_2373216_eqy0d1jkzyp.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_2373216_eqy0d1jkzyp.woff') format('woff'),
+  url('//at.alicdn.com/t/font_2373216_eqy0d1jkzyp.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_2373216_eqy0d1jkzyp.svg#iconfont') format('svg');
+}
+
+  .iconfont666{
+    font-family:"iconfont666" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}

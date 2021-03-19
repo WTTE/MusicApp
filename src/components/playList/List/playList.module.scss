@@ -1,0 +1,53 @@
+.playList {
+    // background-color: yellow;
+    padding: 13px 10px 0px;
+    .content {
+      font-size: 18px;
+      font-weight: 700;
+      color: #666;
+      // background-color: red;
+    }
+  
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 10px;
+  
+      li {
+        position: relative;
+        width: 31%;
+        margin-bottom: 10px;
+        list-style: none;
+        .box {
+          display: block;
+          color: #000;
+          font-size: 12px;
+  
+          img {
+            width: 100%;
+            border-radius: 8px;
+          }
+          div {
+            height: 28px;
+            margin-top: 5px;
+            line-height: 1.2;
+            overflow: hidden;
+            color: #666;
+          }
+          .playCount {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            // .iconfont1 {
+            //   font-size: 1px;
+            //   margin-right: 3px;
+            // }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,42 @@
+.list {
+  li {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 30px 20px 20px;
+    line-height: 1.5;
+
+    div {
+      overflow: hidden;
+      h3 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 15px;
+        color: #333;
+        font-weight: bold;
+      }
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #777;
+      }
+      .icon {
+        color: #999;
+        font-size: 18px;
+      }
+    }
+    div:last-child {
+      width: 12px;
+      margin-left: 10px;
+    }
+
+    &.active div {
+      h3,
+      .icon,
+      p {
+        color: rgb(203, 63, 46);
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+//drawer左侧竖条透明度
+.am-drawer-draghandle {
+  opacity: 0;
+}
+//遮罩层
+// .am-drawer-overlay {
+//   display: none;
+// }
+//官网样式
+.my-drawer .am-drawer-sidebar {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.am-navbar {
+  background: rgb(203, 63, 46) !important;
+  position: fixed;
+  top: 0px;
+  height: 50px;
+  z-index: 100;
+  width: 100%;
+  .iconfont666 {
+    font-size: 20px;
+  }
+  .am-navbar-left {
+    div {
+      font-size: 14px;
+
+      a {
+        color: white;
+      }
+
+      svg {
+        vertical-align: middle;
+        margin-top: -5px;
+      }
+    }
+  }
+
+  .am-navbar-title {
+    .am-search {
+      width: 250px;
+      background-color: transparent !important;
+      .am-search-input {
+        height: 30px;
+      }
+    }
+
+    .am-search-cancel {
+      margin-right: -40px !important;
+    }
+  }
+}

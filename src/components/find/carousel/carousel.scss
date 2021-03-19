@@ -1,0 +1,17 @@
+.banners {
+    padding-top: 8px;
+    touch-action: none; //解决"Unable to preventDefault inside passive event listener invocation."!!!目前仍未解决
+    .am-carousel {
+        border-radius: 12px !important;
+        overflow: hidden;
+        .slider-list {
+            .slider-slide {
+                height: 128px !important;
+                .img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

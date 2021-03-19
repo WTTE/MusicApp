@@ -1,0 +1,49 @@
+.topList {
+    padding-top: 5px;
+    .top {
+        padding-bottom: 20px;
+        li {
+            display: flex;
+            align-items: center;
+            padding-left: 6px;
+            padding-right: 8px;
+            height: 70px;
+            color: #666;
+            background-color: white;
+            .left {
+                position: relative;
+                margin-right: 10px;
+                img {
+                    display: block;
+                    height: 60px;
+                    width: 60px;
+                    object-fit: cover; //img保持原有尺寸比例,但部分内容可能被剪切
+                }
+            }
+            .right {
+                flex-grow: 1;
+                overflow: hidden;
+
+                .title {
+                    font-size: 15px;
+                    margin-bottom: 5px;
+                    color: #333;
+                    //超出部分隐藏
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                .content{
+                    width: 270px;
+                    font-size: 8px;
+                    margin-bottom: 5px;
+                    color: #333;
+                    //超出部分隐藏
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}
