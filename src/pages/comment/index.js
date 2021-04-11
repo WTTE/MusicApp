@@ -48,7 +48,7 @@ class Comment extends Component {
                                 <div className={style.right}>
                                     <div className={style.title}>{item.user.nickname}</div>
                                     <div className={style.date}>{dayjs(item.time).format('YYYY-MM-DD')}</div>
-                                    <div className={style.iconfont}><i key="1" className="iconfont666">&#xe7fe;</i>{formatNumber(item.likedCount)}</div>
+                                    <div className={style.iconfontStyle}><i key="1" className="iconfont666">&#xe7fe;</i>{formatNumber(item.likedCount)}</div>
                                     <div className={style.content}>{item.content}</div>
                                 </div>
                             </li>)
@@ -67,7 +67,7 @@ class Comment extends Component {
                                 <div className={style.right}>
                                     <div className={style.title}>{item.user.nickname}</div>
                                     <div className={style.date}>{dayjs(item.time).format('YYYY-MM-DD')}</div>
-                                    <div className={style.iconfont}><i key="1" className="iconfont666">&#xe7fe;</i>{item.likedCount}</div>
+                                    <div className={style.iconfontStyle}><i key="1" className="iconfont666">&#xe7fe;</i>{item.likedCount}</div>
                                     <p className={style.content}>{item.content}</p>
                                 </div>
                             </li>)

@@ -50,8 +50,7 @@ class HistoryPage extends React.Component {
                     </div>
                     <div className={style.empty} style={{ display: likeSongs.length ? 'none' : '' }}>
                         <div className={'iconfont icon-jiarugedan'} />
-                        <p>没有收藏的歌曲</p>
-                        <p>你可以挑一些喜欢的单曲添加到这里</p>
+                        <p>目前没有收藏的歌曲哦</p>
                     </div>
                 </div>
                 <div style={{ display: isHistory ? '' : 'none' }}>
@@ -60,8 +59,7 @@ class HistoryPage extends React.Component {
                     </div>
                     <div className={style.empty} style={{ display: playHistorys.length ? 'none' : '' }}>
                         <div className={'iconfont icon-yinyue'} />
-                        <p>没有播放记录</p>
-                        <p>这里会自动记录您最近听过的歌曲</p>
+                        <p>暂时没有播放记录哦</p>
                     </div>
                 </div>
 

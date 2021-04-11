@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 
 import Songs from '../../components/singersDetail/songs'
 
+import Loading from '../../components/Loading'
+
 import style from './content.module.scss'
 
 import { inject, observer } from 'mobx-react'
@@ -12,7 +14,8 @@ import { inject, observer } from 'mobx-react'
 class Content extends Component {
 
     state = {
-        songs: []//初始化传入子组件Songs的数据的数组
+        songs: [],//初始化传入子组件Songs的数据的数组
+        loading: false
     }
 
     componentDidUpdate(prevProps) {
@@ -25,17 +28,52 @@ class Content extends Component {
         }
     }
 
+    getSongs = (size = 0) => {
+        const { info } = this.props
+        const allList = info.tracks ? info.tracks.slice() : []
+
+        if (this.state.songs.length >= allList.length) {
+            return
+        }
+
+        this.setState({
+            loading: true
+        })
+
+        let list = []
+        //增加两秒的延迟，实际项目中可以不用，这里只是为显示这样一个加载中的过程
+        setTimeout(() => {
+            list = allList.slice(size, size + 30)
+            this.setState({
+                songs: this.state.songs.concat(list),
+                loading: false
+            })
+        }, 2000)
+    }
+
+    loadingMore = () => {
+        if (this.state.loading) {
+            return
+        }
+        const size = this.state.songs.length
+        this.getSongs(size)
+    }
+
     onSelectSong = (obj) => {
         this.props.appStore.onSelectSong(obj)
     }
 
     render() {
-        const { songs } = this.state
-     
+        const { songs, loading } = this.state
+
         console.log(songs, "这是经过slice处理过的songs数组")
+
+        const { currentSong } = this.props.appStore
+
         return (
             <div className={style.content}>
-                <Songs list={songs} onSelectSong={this.onSelectSong}></Songs>
+                <Songs list={songs} loading={loading} loadingMore={this.loadingMore} onSelectSong={this.onSelectSong} currentSong={currentSong}></Songs>
+                <Loading loading={this.props.loading} />
             </div>
         )
     }

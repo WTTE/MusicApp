@@ -6,6 +6,7 @@ import './style/animate.scss'
 import animations from 'create-keyframe-animation'
 import ProgressBar from '../../components/progressBar'
 import { formatTime } from '../../utils/util'
+import { withRouter } from 'react-router'
 import Scroll from '../../components/scroll'
 
 @inject('appStore') @observer
@@ -159,6 +160,12 @@ class NormalPlayer extends React.Component {
         this.middleL.style.transitionDuration = `${duration}ms`
     }
 
+    closePlayer = () => {
+        this.props.appStore.isFullScreen = false
+        //点击关闭普通播放器
+    }
+
+
     render() {
         const { currentSong, isFullScreen, playing, likeSongs, mode, percent, currentTime, songReady, playingLyric, lyric, playingLineNum } = this.props.appStore
         const { currentShow } = this.state
@@ -182,7 +189,11 @@ class NormalPlayer extends React.Component {
                             <span className={'iconfont icon-jiantouarrow483'} />
                         </div>
                         <h2>{currentSong.name}</h2>
-                        <h3>{currentSong.artists}</h3>
+                        {/* 添加点击歌手名跳转对应歌手页面的功能 */}
+                        <div onClick={this.closePlayer}>
+                            <h3>{currentSong.artists}</h3>
+                        </div>
+
                     </div>
 
 
@@ -248,4 +259,4 @@ class NormalPlayer extends React.Component {
     }
 }
 
-export default NormalPlayer
+export default withRouter(NormalPlayer);

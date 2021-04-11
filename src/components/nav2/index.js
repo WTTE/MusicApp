@@ -13,7 +13,7 @@ const DetailData = [
     { url: 'recommend', content: '每日推荐' },
     { url: 'rankingList', content: '排行榜' },
     { url: 'podcastDetail', content: '电台详情' },
-    { url: 'podcast', content: '电台' },
+    { url: 'podcast', content: '歌单' },
     { url: 'playList', content: '歌单详情' },
     { url: 'singer', content: '歌手详情' },
     { url: 'album', content: '专辑详情' },

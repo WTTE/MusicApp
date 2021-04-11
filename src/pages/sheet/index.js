@@ -9,7 +9,8 @@ import Content from './content'
 
 class SheetPage extends Component {
     state = {
-        detail: {}//初始化详情列表
+        detail: {},//初始化详情列表
+        loading: false
     }
 
     // 组件挂载完毕时执行
@@ -22,23 +23,26 @@ class SheetPage extends Component {
 
     //发送请求
     getDetail = async (id) => {
+        this.setState({
+            loading: true
+        })
         //发送get请求
         const res = await get(`/playlist/detail?id=${id}`)
-        //打印返回的结果
-        console.log(res, "FFFFFFFFF")
+
         this.setState({
             //将返回的结果中的playlist赋给detail
-            detail: res.playlist || {}
+            detail: res.playlist || {},
+            loading: false
         })
     }
 
     render() {
-        const {detail} = this.state
-        
+        const { detail, loading } = this.state
+
         return (
             <div>
                 <Header detail={detail}></Header>
-                <Content info={detail}></Content>
+                <Content info={detail} loading={loading}></Content>
             </div>
         )
     }

@@ -57,7 +57,7 @@ class Tabs extends Component {
                 >
                 </TabBar.Item>
                 <TabBar.Item
-                    title="电台"
+                    title="歌单"
                     key="podcast"
                     icon={<i key="1" className="iconfont666">&#xe643;</i>
                     }

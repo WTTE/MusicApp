@@ -29,7 +29,8 @@ const PlayList = (props) => {
         const Url = props.location.pathname.split("/")[2];
         //发送请求
         const res = await get(`/top/playlist?cat=${Url}&offset=${limitIndex}&limit=6`)
-        console.log(res, "ressssssssssssss")
+        console.log(res, "这是res!!!!!!!!")
+        console.log(songsList)
         setsongsList([...songsList, ...res.playlists])
     }
 
@@ -40,7 +41,7 @@ const PlayList = (props) => {
     }
 
     
-    const title = props.location.pathname.split("/")[2];
+    const title = props.location.pathname.split("/")[2];//拿到url后面的语种
     console.log(title, "hhhh")
 
     return <List2 title={title} songsList={songsList} changeIndex={changeIndex}></List2>

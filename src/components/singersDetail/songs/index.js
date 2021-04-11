@@ -3,6 +3,7 @@ import Scroll from '../../../components/scroll'
 import PropTypes from 'prop-types'
 import style from './songs.module.scss'
 
+
 class Songs extends Component {
     static propTypes = {
         list: PropTypes.array,
@@ -10,15 +11,15 @@ class Songs extends Component {
         loading: PropTypes.bool,
         loadingMore: PropTypes.func,
         onSelectSong: PropTypes.func,
-        currentSong: PropTypes.object,
+        currentSong: PropTypes.object
     }
     static defaultProps = {
         list: [],
-        bottomLoadingText: '加载中...',   //底部loading文字
+        bottomLoadingText: '正在加载...',   //底部loading文字
         loading: false,    //是否正在加载
         loadingMore: () => { },
         onSelectSong: () => { },
-        currentSong: {},
+        currentSong: {}
     }
 
     state = {
@@ -38,6 +39,7 @@ class Songs extends Component {
             })
         }
     }
+
     loadingMore = async () => {
         await this.props.loadingMore()
         this.scroll && this.scroll.finishPullUp()
@@ -56,8 +58,9 @@ class Songs extends Component {
     render() {
         //从state中取出歌曲数组list
         const { list } = this.state
-        console.log(list,"这是Songs组件接收到的list")
+        console.log(list, "这是Songs组件接收到的list")
         const { bottomLoadingText, loading, currentSong } = this.props
+
 
         return (
             <div className={style.songsbox}>
@@ -65,13 +68,13 @@ class Songs extends Component {
                     <div>
                         <ul>
                             {
-                                list.map((item, index) => <li key={item.id} onClick={() => this.onSelect(item, index)} className={currentSong.id===item.id ? style.active : ''}>
+                                list.map((item, index) => <li key={item.id} onClick={() => this.onSelect(item, index)} className={currentSong.id === item.id ? style.active : ''}>
                                     <div className={`${style.num} ${index < 3 ? style.red : ''}`}>{index + 1}</div>
 
                                     <div className={style.text}>
                                         <h3>{item.name}</h3>
                                         <div>
-                                            {item.ar &&item.ar.reduce((init, current, index) => {
+                                            {item.ar && item.ar.reduce((init, current, index) => {
                                                 if (index < item.ar.length - 1) {
                                                     init += current.name + ' / '
                                                 } else {
@@ -87,8 +90,8 @@ class Songs extends Component {
                             }
                         </ul>
                         {
-                           loading && list.length ? <div className={style.loading}>{bottomLoadingText}</div> : null
-                       }
+                            loading && list.length ? <div className={style.loading}>{bottomLoadingText}</div> : null
+                        }
                     </div>
                 </Scroll>
             </div>

@@ -7,6 +7,7 @@ import { withRouter } from 'react-router-dom'
 
 @inject('appStore') @observer
 class Player extends Component {
+
     componentDidMount() {
         this.props.appStore.setStore({
             audio: this.audio
@@ -28,12 +29,17 @@ class Player extends Component {
 
     //判断在何页面展示MiniPlayer
     MiniPlayerOpen = () => {
-        const exceptUrl = ["/singersDetail", "/history","/history/isHistory=1"]
-        if (exceptUrl.indexOf(this.props.location.pathname) !== -1) {
+        var exceptUrl = ["history/isHistory=1", "history"]
+        //注意this.props.location.pathname取到的字符串包含特殊字符，需要处理后进行比较
+        const pathUrl = this.props.location.pathname.split("/")[1]
+        console.log(pathUrl, "这是MiniPlayerOpen中的pathUrl")
+        if (exceptUrl.indexOf(pathUrl) > -1) {
+            // console.log("迷你播放器不弹出")
             return null;
         }
         else {
-            return <MiniPlayer />
+            // console.log("弹出！！！")
+            return <MiniPlayer></MiniPlayer>;
         }
     }
 
@@ -43,10 +49,13 @@ class Player extends Component {
         return (
             <div style={{ display: playlist.length > 0 ? '' : 'none' }}>
                 <NormalPlayer playingLineNum={playingLineNum} isFullScreen={isFullScreen} />
+
                 {/* 在什么页面展示Mini播放器的判断 */}
                 {this.MiniPlayerOpen()}
 
                 <PlayList currentSong={currentSong} isShowPlaylist={isShowPlaylist} />
+
+                {/* 使用H5的audio标签实现音乐播放 */}
                 <audio
                     onCanPlay={this.onCanPlay}
                     onError={this.onError}

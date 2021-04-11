@@ -16,7 +16,7 @@ class Songs extends Component {
 
         //使用字符串截取，将传过来的title中的"歌单"两字去掉
         const cat = title.substring(0, title.length - 2)
-        console.log(cat, "cat")
+        // console.log(cat, "cat")
 
         return (
             <div className="recommend-box">

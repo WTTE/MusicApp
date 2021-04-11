@@ -1,6 +1,7 @@
 import React from 'react'
 import style from './style/miniPlayer.module.scss'
 import { inject, observer } from 'mobx-react'
+import { withRouter } from 'react-router'
 import './style/animate.scss'
 
 
@@ -24,7 +25,7 @@ class MiniPlayer extends React.Component {
     render() {
         const { currentSong, playing } = this.props.appStore
         return (
-            <div className={style['mini-player']} onClick={this.open}>
+            <div className={style['mini-player']} onClick={this.open} style={{ marginBottom: ["find", "podcast", "rankingList", "mine"].indexOf(this.props.location.pathname.split("/")[1]) > -1 ? ' 50px' : "" }}>
                 <div className={style.icon}>
                     <img src={currentSong.image} alt="" className={`rotate ${playing ? '' : 'rotate-pause'}`} />
                 </div>
@@ -43,4 +44,4 @@ class MiniPlayer extends React.Component {
     }
 }
 
-export default MiniPlayer
+export default withRouter(MiniPlayer);
