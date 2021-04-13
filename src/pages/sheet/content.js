@@ -5,6 +5,8 @@ import Songs from '../../components/singersDetail/songs'
 
 import Loading from '../../components/Loading'
 
+import PropTypes from 'prop-types'
+
 import style from './content.module.scss'
 
 import { inject, observer } from 'mobx-react'
@@ -12,7 +14,12 @@ import { inject, observer } from 'mobx-react'
 
 @inject('appStore') @observer
 class Content extends Component {
-
+    static propTypes = {
+        info: PropTypes.object,
+    }
+    static defaultProps = {
+        info: {}
+    }
     state = {
         songs: [],//初始化传入子组件Songs的数据的数组
         loading: false
@@ -64,14 +71,19 @@ class Content extends Component {
     }
 
     render() {
+        const { info } = this.props
+
         const { songs, loading } = this.state
 
         console.log(songs, "这是经过slice处理过的songs数组")
 
-        const { currentSong } = this.props.appStore
+        const { currentSong, playlist } = this.props.appStore
+
+        const h = playlist.length ? 60 : 0
+        const height = { height: `calc(100vh - ${180 + h}px` }
 
         return (
-            <div className={style.content}>
+            <div className={style.content} style={height}>
                 <Songs list={songs} loading={loading} loadingMore={this.loadingMore} onSelectSong={this.onSelectSong} currentSong={currentSong}></Songs>
                 <Loading loading={this.props.loading} />
             </div>

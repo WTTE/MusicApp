@@ -28,7 +28,7 @@ const PlayList = (props) => {
         //将url后面携带的参数截取赋给Url(以"/"作为分隔)
         const Url = props.location.pathname.split("/")[2];
         //发送请求
-        const res = await get(`/top/playlist?cat=${Url}&offset=${limitIndex}&limit=6`)
+        const res = await get(`/top/playlist?cat=${Url}&offset=${limitIndex}&limit=12`)
         console.log(res, "这是res!!!!!!!!")
         console.log(songsList)
         setsongsList([...songsList, ...res.playlists])
@@ -37,10 +37,10 @@ const PlayList = (props) => {
     //增加页码的函数
     const changeIndex = () => {
         console.log("加载下一面的方法被触发")
-        setlimitIndex(++limitIndex)
+        setlimitIndex(limitIndex = limitIndex + 12)
     }
 
-    
+
     const title = props.location.pathname.split("/")[2];//拿到url后面的语种
     console.log(title, "hhhh")
 

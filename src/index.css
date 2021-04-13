@@ -13,7 +13,7 @@ code {
 /* 全局样式中将页面主体内容挤一挤，防止Nav和Tabs组件对内容进行遮挡 */
 #root {
   padding-top: 50px;
-  padding-bottom: 70px;
+  padding-bottom: 50px;
   overflow: hidden;
 }
 

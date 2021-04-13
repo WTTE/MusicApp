@@ -13,15 +13,15 @@ import style from './playList.module.scss'
 // const Brief = Item.Brief;
 
 const List2 = (props) => {
-    //上拉刷新部分
+    //上拉刷新部分初始化
     let [refreshing, setRefreshing] = useState(false)
-    let [down] = useState(false)
+    let [down] = useState(false)//将方向由下拉改成上拉
     let [height] = useState(document.documentElement.clientHeight)
 
     //只要父组件给当前组件传递了新的props.songsList，那么就把当前PullToRefresh的状态变为false
     useEffect(() => {
         setRefreshing(false)
-    }, [props.songsList])
+    }, [props.songsList])//如果父亲传过来的songsList发生改变，就将setRefreshing变为false
 
     return (
         <div className={style.playList}>
@@ -34,22 +34,19 @@ const List2 = (props) => {
                 distanceToRefresh={30}
                 //指定样式
                 style={{
-                    height: height - 100,
+                    height: height - 50,
                     overflow: 'auto',
                 }}
                 //指定提示文字
-                indicator={down ? {} : { deactivate: '上拉可以刷新' }}
+                indicator={down ? {} : { deactivate: '上拉加载更多' }}
                 //指定拉动方向
                 direction={down ? 'down' : 'up'}
                 //PullToRefresh是否正在刷新
                 refreshing={refreshing}
                 //刷新之后回调函数
                 onRefresh={() => {
-                    console.log("正在刷新")
+                    console.log("正在加载")
                     setRefreshing(true)
-                    // setTimeout(() => {
-                    //     setRefreshing(false)
-                    // }, 1000);
                     props.changeIndex && props.changeIndex();
                 }}
                 getScrollContainer={() => (undefined)}
@@ -72,6 +69,7 @@ const List2 = (props) => {
                 </ul>
             </PullToRefresh>
         </div>
+
     )
 }
 

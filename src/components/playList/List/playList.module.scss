@@ -1,6 +1,6 @@
 .playList {
     // background-color: yellow;
-    padding: 13px 10px 0px;
+    padding: 20px 10px 0px;
     .content {
       font-size: 18px;
       font-weight: 700;
@@ -12,12 +12,12 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      margin-top: 10px;
+      margin-top: 15px;
   
       li {
         position: relative;
         width: 31%;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         list-style: none;
         .box {
           display: block;
